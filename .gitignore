@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+.cache/
+dist/
+coverage/
+.vscode/
+.env
+.nyc_output/
+.test.txt
+docs/

@@ -1,0 +1,22 @@
+{
+  "name": "kreat",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "bin":{
+    "@c5m7b4/kreat":"./bin/kreat",
+    "kreat":"./bin/kreat"
+  },
+  "publishConfig":{
+    "access":"public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
