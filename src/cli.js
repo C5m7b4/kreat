@@ -1,16 +1,16 @@
-import arg from "arg";
-import inquirer from "inquirer";
-import { createProject } from "./main";
+import arg from 'arg';
+import inquirer from 'inquirer';
+import { createProject } from './main';
 
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
-      "--git": Boolean,
-      "--yes": Boolean,
-      "--install": Boolean,
-      "-g": "--git",
-      "-y": "--yes",
-      "-i": "--install",
+      '--git': Boolean,
+      '--yes': Boolean,
+      '--install': Boolean,
+      '-g': '--git',
+      '-y': '--yes',
+      '-i': '--install',
     },
     {
       argv: rawArgs.slice(2),
@@ -18,15 +18,15 @@ function parseArgumentsIntoOptions(rawArgs) {
   );
 
   return {
-    skipPrompts: args["--yes"] || false,
-    git: args["--git"] || false,
+    skipPrompts: args['--yes'] || false,
+    git: args['--git'] || false,
     template: args._[0],
-    runInstall: args["--install"] || false,
+    runInstall: args['--install'] || false,
   };
 }
 
 async function promptForMissingOptions(options) {
-  const defaultTemplate = "Javascript";
+  const defaultTemplate = 'javascript';
   if (options.skipPrompts) {
     return {
       ...options,
@@ -37,18 +37,18 @@ async function promptForMissingOptions(options) {
   const questions = [];
   if (!options.template) {
     questions.push({
-      type: "list",
-      name: "template",
-      message: "Please choose which project template to use",
-      choices: ["Javascript", "Typescript"],
+      type: 'list',
+      name: 'template',
+      message: 'Please choose which project template to use',
+      choices: ['javascript', 'typescript'],
       default: defaultTemplate,
     });
   }
   if (!options.git) {
     questions.push({
-      type: "confirm",
-      name: "git",
-      message: "Initialize an empty git repository",
+      type: 'confirm',
+      name: 'git',
+      message: 'Initialize an empty git repository',
       default: false,
     });
   }
