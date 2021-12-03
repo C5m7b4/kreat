@@ -1,6 +1,11 @@
-```js
+# Kreat
 
-kreat cli --yes --git --install
+A CLI to create a clean React project
+
+To create an app run:
+
+```js
+npx kreat
 ```
 
-cli will be the template
+You will be given a series of prompts asking how you would like to install your app.

@@ -38,7 +38,7 @@ async function createGitignore(options) {
 }
 
 async function createLicense(options) {
-  const targetPath = path.join(options.targetDirectory, 'LICENSE');
+  const targetPath = path.join(options.targetDirectory, 'LICENSE.md');
   const licenseContent = license.licenseText
     .replace('<year>', new Date().getFullYear())
     .replace('<copyright holders>', `${options.name} ${options.email}`);
@@ -111,6 +111,5 @@ export async function createProject(options) {
 
   await tasks.run();
 
-  console.log('%s Project read', chalk.green.bold('DONE'));
-  return true;
+  console.log('%s Project ready', chalk.green.bold('DONE'));
 }
