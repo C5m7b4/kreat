@@ -52,12 +52,21 @@ async function promptForMissingOptions(options) {
       default: false,
     });
   }
+  if (!options.runInstall) {
+    questions.push({
+      type: 'confirm',
+      name: 'runInstall',
+      message: 'Do you want to install Dependencies',
+      default: false,
+    });
+  }
 
   const answers = await inquirer.prompt(questions);
   return {
     ...options,
     template: options.template || answers.template,
     git: options.git || answers.git,
+    runInstall: options.runInstall || answers.runInstall,
   };
 }
 
