@@ -1,11 +1,11 @@
 {
   "name": "kreat",
   "version": "0.0.1",
-  "description": "",
+  "description": "A cli to bootstrap my projects",
   "main": "src/index.js",
   "bin": {
-    "@c5m7b4/kreat": "./bin/kreat",
-    "kreat": "./bin/kreat"
+    "@c5m7b4/kreat": "bin/kreat",
+    "kreat": "bin/kreat"
   },
   "publishConfig": {
     "access": "public"
@@ -14,11 +14,21 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "C5m7b4",
+  "license": "MIT",
   "dependencies": {
     "arg": "^5.0.1",
+    "chalk": "^5.0.0",
     "esm": "^3.2.25",
-    "inquirer": "^8.2.0"
-  }
+    "execa": "^6.0.0",
+    "inquirer": "^8.2.0",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/"
+  ]
 }
