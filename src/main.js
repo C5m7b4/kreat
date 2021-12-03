@@ -4,7 +4,7 @@ import ncp from "ncp";
 import path from "path";
 import { promisify } from "util";
 import { fileURLToPath } from "url";
-import { execa } from "execa";
+import execa from "execa";
 import Listr from "listr";
 import { projectInstall } from "pkg-install";
 
@@ -12,7 +12,7 @@ const access = promisify(fs.access);
 const copy = promisify(ncp);
 
 async function initGit(options) {
-  const result = exec("git", ["init"], {
+  const result = execa("git", ["init"], {
     cwd: options.targetDirectory,
   });
   if (result.failed) {
@@ -51,8 +51,30 @@ export async function createProject(options) {
     process.exit(1);
   }
 
-  console.log("Copying project files...");
-  await copyTemplateFiles(options);
+  const task = new Listr([
+    {
+      title: "Copy project files",
+      task: () => copyTemplateFiles(options),
+    },
+    {
+      title: "Initialize Git",
+      task: () => initGit(options),
+      enabled: () => options.git,
+    },
+    {
+      title: "Install Dependencies",
+      task: () =>
+        projectInstall({
+          cwd: options.targetDirectory,
+        }),
+      skip: () =>
+        !options.runInstall
+          ? "Pass --install to automatically install dependencies"
+          : undefined,
+    },
+  ]);
+
+  await tasks.run();
 
   console.log("%s Project read", chalk.green.bold("DONE"));
   return true;
