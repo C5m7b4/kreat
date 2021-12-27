@@ -41,8 +41,8 @@ async function promptForMissingOptions(options) {
       name: 'template',
       message: 'Please choose which project template to use',
       choices: [
-        'javascript',
-        'typescript',
+        'javascript-react',
+        'typescript-react',
         'javascript-playground',
         'typescript-playground',
         'typescript-library',

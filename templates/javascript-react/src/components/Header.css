@@ -1,0 +1,40 @@
+.header {
+  border-bottom: 2px solid #fff;
+  height: 40px;
+}
+
+.mid {
+  width: 60%;
+  margin: auto;
+  display: inline-block;
+}
+
+.left {
+  display: inline-block;
+  width: 20%;
+  font-size: 20px;
+  padding: 18px 17px;
+  color: #fff;
+}
+
+.navbar {
+  display: inline-block;
+}
+
+.navbar li {
+  list-style: none;
+  display: inline-block;
+  margin: auto;
+}
+
+.navbar li a {
+  font-size: 18px;
+  color: #fff;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+.navbar li a:hover {
+  color: limegreen;
+}
