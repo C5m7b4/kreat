@@ -7,8 +7,8 @@
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "sass": "sass src/sass:src/css --watch",
-    "build": "webpack",
-    "start": "webpack serve --open"
+	"build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js --open",
   },
   "keywords": [],
   "author": "C5m7b4",
