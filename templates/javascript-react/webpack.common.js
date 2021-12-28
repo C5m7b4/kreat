@@ -1,26 +1,25 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.tsx'),
+  entry: path.resolve(__dirname, "./src/index.js"),
   module: {
     rules: [
       {
-        test: /\.(js|ts)x?$/,
-        loader: require.resolve('babel-loader'),
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
+        use: ["babel-loader", "eslint-loader"],
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               limit: 8192,
             },
@@ -30,19 +29,19 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, "src"),
     },
   },
   output: {
-    filename: 'bundle.[hash].js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "bundle.[hash].js",
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      title: "Javascript Testing",
     }),
   ],
 };
