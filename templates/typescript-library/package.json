@@ -1,5 +1,5 @@
 {
-  "name": "la-fouille",
+  "name": "typescript-library",
   "version": "0.0.1",
   "description": "Search, Sort, and Filter Component",
   "main": "dist/cjs/index.js",
