@@ -1,6 +1,7 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
 import { createProject } from './main';
+import { version } from './package.json';
 
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
@@ -77,6 +78,7 @@ async function promptForMissingOptions(options) {
 }
 
 export async function cli(args) {
+  console.log('version', version);
   let options = parseArgumentsIntoOptions(args);
   options = await promptForMissingOptions(options);
   console.log(options);
