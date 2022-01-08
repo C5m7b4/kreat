@@ -1,6 +1,6 @@
 {
   "name": "kreat",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A cli to bootstrap my projects",
   "main": "src/index.js",
   "bin": {
