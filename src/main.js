@@ -55,7 +55,7 @@ export async function createProject(options) {
   options = {
     ...options,
     targetDirectory: options.targetDirectory || process.cwd(),
-    email: 'c5m7b4@gmail.com',
+    email: 'dcrdev@gmail.com',
     name: 'C5m7b4',
   };
 
