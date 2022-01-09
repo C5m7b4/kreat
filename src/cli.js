@@ -45,7 +45,6 @@ async function promptForMissingOptions(options) {
         'typescript-react',
         'javascript-playground',
         'typescript-playground',
-        'typescript-library',
       ],
       default: defaultTemplate,
     });
