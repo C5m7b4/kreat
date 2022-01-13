@@ -11,6 +11,7 @@ const packageJson = require('./package.json');
 export default [
   {
     input: 'src/index.ts',
+    external: ['react', 'react-dom'],
     output: [
       {
         file: packageJson.main,
@@ -27,7 +28,17 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: [
+          '**/tests',
+          '**/*.test.ts',
+          '**/*.test.tsx',
+          '**/example/*.*',
+          '**__mocks__/*.*',
+          '**/settings/*.*',
+        ],
+      }),
       postcss(),
       terser(),
     ],
