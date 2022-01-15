@@ -37,6 +37,7 @@ export default [
           '**/example/*.*',
           '**__mocks__/*.*',
           '**/settings/*.*',
+          '**/scss/*.*',
         ],
       }),
       postcss(),
