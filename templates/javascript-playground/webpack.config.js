@@ -13,6 +13,11 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+    port: 3004,
+    compress: true,
+    clientOverlay: {
+      overlay: false
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
