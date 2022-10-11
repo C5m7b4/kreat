@@ -11,7 +11,7 @@ module.exports = {
     },
     port: 3000,
     compress: true,
-    clientOverlay: {
+    client: {
       overlay: false
     }
   },

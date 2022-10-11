@@ -15,7 +15,7 @@ module.exports = {
     static: './dist',
     port: 3004,
     compress: true,
-    clientOverlay: {
+    client {
       overlay: false
     }
   },
