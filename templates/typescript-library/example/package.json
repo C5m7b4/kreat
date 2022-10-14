@@ -1,7 +1,7 @@
 {
   "name": "example",
   "version": "1.0.0",
-  "description": "",
+  "description": "site for testing the library",
   "main": "index.js",
   "scripts": {
     "start":"parcel index.html"

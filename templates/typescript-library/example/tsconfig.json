@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    // Default
     "target": "es5", 
     "esModuleInterop": true, 
     "forceConsistentCasingInFileNames": true,
