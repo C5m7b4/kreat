@@ -4,5 +4,6 @@
       "pragma":"vdom.createElement",
       "throwIfNamespace": false
     }]
-  ]
+  ],
+  "presets": ["@babel/preset-env"]
 }
